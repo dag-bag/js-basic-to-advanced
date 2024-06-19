@@ -1,11 +1,7 @@
-
-const arr = [1,2,3,4]
+const arr = [1, 2, 3, 4];
+// console.log(arr.unshift(5));
 // console.log(arr.filter((item)=> item < 3))
 // console.log(arr.find((item)=> item ===3))
-
-
-
-
 
 // const customFind = (arr,callback) =>{
 // let count = 0
@@ -14,10 +10,9 @@ const arr = [1,2,3,4]
 //      count++
 //         if(callback(arr[i]))  {
 //         	result = arr[i]
-        	
+
 //         	break;
 //         }
-
 
 // 	}
 // 	console.log(0)
@@ -41,3 +36,16 @@ const arr = [1,2,3,4]
 // }
 
 // console.log(startEndDeleteMethood(arr,'end'))
+
+function unshift(arr, ...elements) {
+  // looping items
+  for (let i = 0; i < originalLength; i++) {
+    arr[elements.length - 1 - i] = arr[arr.length - 1 - i];
+  }
+  // for (let j = 0; j < elements.length; j++) {}
+  // // add length into this array
+  arr.length = arr.length + elements.length;
+  return arr;
+}
+
+console.log(unshift(arr, 0, 0, 0));
